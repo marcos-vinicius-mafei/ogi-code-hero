@@ -1,0 +1,29 @@
+.input-container {
+	position: relative;
+}
+
+.input-container img {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+}
+
+.search-input {
+	width: 295px;
+	height: 32px;
+	padding: 8px 16px;
+	padding-right: 40px;
+	border-radius: 4px;
+	font-size: 14px;
+	outline: none;
+	border: none;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.search-input::placeholder {
+	color: var(--smoke);
+	font-style: italic;
+}
