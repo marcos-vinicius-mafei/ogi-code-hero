@@ -28,6 +28,7 @@ section.search-section h3 {
 	section.search-section {
 		align-items: flex-start;
 		gap: 16px;
+		padding-top: 40px;
 	}
 
 	section.search-section .column-container {
