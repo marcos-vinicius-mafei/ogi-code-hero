@@ -7,7 +7,6 @@ section.characters-section {
 
 section.characters-section .labels-container {
 	display: flex;
-	justify-content: space-between;
 	padding-left: 88px;
 }
 
@@ -15,8 +14,27 @@ section.characters-section .labels-container p {
 	font-size: 12px;
 	line-height: 16px;
 	color: var(--smoke);
+	width: 33%;
 }
 
 section.characters-section .labels-container .mobile-hidden {
 	display: none;
+}
+
+@media screen and (min-width: 600px) {
+	section.characters-section .labels-container {
+		padding-left: 24px;
+	}
+
+	section.characters-section .labels-container p:nth-child(2) {
+		margin-left: -12px;
+	}
+
+	section.characters-section .labels-container p:nth-child(3) {
+		margin-left: -4px;
+	}
+
+	section.characters-section .labels-container .mobile-hidden {
+		display: block;
+	}
 }

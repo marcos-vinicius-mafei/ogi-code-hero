@@ -17,6 +17,11 @@ function CharacterCard() {
 					<p>Old Man Hawkeye</p>
 					<p>Four Visionaries: Walter Simonson Vol. 1</p>
 				</div>
+				<div className="card-column">
+					<p>AvX</p>
+					<p>Demon in the Bottle</p>
+					<p>Dynasty M</p>
+				</div>
 			</div>
 		</button>
 	);

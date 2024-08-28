@@ -25,6 +25,17 @@
 	gap: 24px;
 }
 
+.character-card .card-column p {
+	font-size: 12px;
+	line-height: 16px;
+	font-family: var(--font-pt-sans);
+	color: var(--dark-smoke);
+	max-width: 95%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
 .character-card .card-column.main p {
 	font-weight: bold;
 	font-size: 14px;
@@ -36,4 +47,23 @@
 	height: 48px;
 	border-radius: 4px;
 	background-color: var(--snow);
+}
+
+@media screen and (min-width: 600px) {
+	.character-card {
+		padding: 20px 24px;
+	}
+
+	.character-card .card-column {
+		display: flex;
+		flex-direction: column;
+		width: 33%;
+		align-items: flex-start;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.character-card .card-column p {
+		font-size: 14px;
+	}
 }
