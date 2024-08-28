@@ -6,10 +6,13 @@
 	--dark-smoke: #555555;
 	--dark-blue: #167abc;
 	--shadow: #00000033;
+
+	--font-pt-sans: 'PT Sans', sans-serif;
+	--font-pt-comics: 'PT Sans Caption', system-ui;
 }
 
 body {
-	font-family: 'PT Sans', sans-serif;
+	font-family: var(--font-pt-sans);
 	font-weight: 400;
 	font-style: normal;
 
