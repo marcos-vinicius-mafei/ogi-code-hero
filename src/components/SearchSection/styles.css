@@ -1,7 +1,5 @@
 section.search-section {
 	padding-top: 24px;
-	padding-right: 24px;
-	padding-left: 24px;
 	display: flex;
 	flex-direction: column;
 	gap: 24px;

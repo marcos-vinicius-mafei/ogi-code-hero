@@ -5,7 +5,9 @@ function App() {
 		<>
 			<Header />
 			<main>
-				<SearchSection />
+				<div className="inner-container">
+					<SearchSection />
+				</div>
 			</main>
 		</>
 	);
