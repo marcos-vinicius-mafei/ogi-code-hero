@@ -1,0 +1,22 @@
+section.characters-section {
+	margin-top: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+}
+
+section.characters-section .labels-container {
+	display: flex;
+	justify-content: space-between;
+	padding-left: 88px;
+}
+
+section.characters-section .labels-container p {
+	font-size: 12px;
+	line-height: 16px;
+	color: var(--smoke);
+}
+
+section.characters-section .labels-container .mobile-hidden {
+	display: none;
+}

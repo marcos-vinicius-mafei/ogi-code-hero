@@ -1,4 +1,4 @@
-import { Header, SearchSection } from './components';
+import { CharactersSection, Header, SearchSection } from './components';
 
 function App() {
 	return (
@@ -7,6 +7,7 @@ function App() {
 			<main>
 				<div className="inner-container">
 					<SearchSection />
+					<CharactersSection />
 				</div>
 			</main>
 		</>
