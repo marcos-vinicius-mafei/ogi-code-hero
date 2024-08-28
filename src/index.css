@@ -21,6 +21,10 @@ body {
 	min-height: 100vh;
 }
 
+main {
+	padding-top: 64px;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
