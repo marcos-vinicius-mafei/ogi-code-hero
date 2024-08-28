@@ -1,0 +1,73 @@
+header {
+	background-color: var(--white);
+	height: 64px;
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	padding: 16px 24px;
+	align-items: center;
+	font-family: 'PT Sans Caption', system-ui;
+	font-size: 12px;
+	line-height: 16px;
+	position: fixed;
+}
+
+img {
+	width: 96px;
+}
+
+.candidate-container {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	justify-content: flex-end;
+	width: 60%;
+}
+
+.info-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	align-items: flex-end;
+	width: 70%;
+}
+
+.candidate-name {
+	font-weight: bold;
+	max-width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.candidate-abbr {
+	width: 32px;
+	height: 32px;
+	border-radius: 4px;
+	background-color: var(--snow);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.candidate-abbr p {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		font-size: 14px;
+	}
+
+	.candidate-container {
+		width: 80%;
+	}
+
+	.info-container {
+		justify-content: flex-end;
+		flex-direction: row;
+		align-items: center;
+		gap: 4px;
+	}
+}
