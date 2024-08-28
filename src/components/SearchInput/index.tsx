@@ -10,7 +10,7 @@ function SearchInput() {
 				className="search-input"
 				onChange={(e) => console.log(e.target.value)}
 			/>
-			<img src={searchIcon} />
+			<img src={searchIcon} alt="Magnifying glass icon" />
 		</div>
 	);
 }

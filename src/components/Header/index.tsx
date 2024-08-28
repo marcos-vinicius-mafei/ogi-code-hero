@@ -4,7 +4,7 @@ import './styles.css';
 function Header() {
 	return (
 		<header>
-			<img src={Logo} />
+			<img src={Logo} alt="Objective Group Logo" />
 			<div className="candidate-container">
 				<div className="info-container">
 					<p className="candidate-name">Marcos Vinícius Mafei Machado</p>
