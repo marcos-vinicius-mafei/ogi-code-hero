@@ -30,7 +30,7 @@
 	line-height: 16px;
 	font-family: var(--font-pt-sans);
 	color: var(--dark-smoke);
-	width: 95%;
+	width: 60vw;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -67,6 +67,10 @@
 
 	.character-card .card-column.main {
 		width: 33%;
+	}
+
+	.character-card .card-column p {
+		width: 95%;
 	}
 }
 
