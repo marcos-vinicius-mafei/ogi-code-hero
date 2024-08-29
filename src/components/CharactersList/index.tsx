@@ -6,6 +6,11 @@ function CharactersList() {
 		<div className="characters-list">
 			<CharacterCard />
 			<CharacterCard />
+			<CharacterCard />
+			<CharacterCard />
+			<CharacterCard />
+			<CharacterCard />
+			<CharacterCard />
 		</div>
 	);
 }

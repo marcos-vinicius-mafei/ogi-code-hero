@@ -1,4 +1,4 @@
-import { CharactersSection, Header, SearchSection } from './components';
+import { CharactersSection, Footer, Header, SearchSection } from './components';
 
 function App() {
 	return (
@@ -10,6 +10,7 @@ function App() {
 					<CharactersSection />
 				</div>
 			</main>
+			<Footer />
 		</>
 	);
 }
