@@ -1,26 +1,37 @@
+import { MarvelCharacter } from '../../../@types/general';
 import './styles.css';
 
-function CharacterCard() {
+interface CharacterCardProps {
+	character: MarvelCharacter;
+}
+
+function CharacterCard({
+	character: { name, series, events, thumbnail },
+}: CharacterCardProps) {
 	return (
 		<button onClick={() => console.log('open details modal')}>
 			<div className="character-card">
 				<div className="card-column main">
 					<img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH3WVTxt2M_BfPhnxODXRv5nLRZ_ZEc0JP4A&s"
+						src={`${thumbnail.path}.${thumbnail.extension}`}
 						// TODO use actual character name from props
 						alt="name of the character image"
 					/>
-					<p>Iron Man</p>
+					<p>{name}</p>
 				</div>
 				<div className="card-column">
-					<p>Iron Man: Armor Wars Fantastic </p>
-					<p>Old Man Hawkeye</p>
-					<p>Four Visionaries: Walter Simonson Vol. 1</p>
+					{series.items && series.items.length ? (
+						series.items.map((item) => <p>{item.name}</p>)
+					) : (
+						<p>No Series</p>
+					)}
 				</div>
 				<div className="card-column">
-					<p>AvX</p>
-					<p>Demon in the Bottle</p>
-					<p>Dynasty M</p>
+					{events.items && events.items.length ? (
+						events.items.map((item) => <p>{item.name}</p>)
+					) : (
+						<p>No Events</p>
+					)}
 				</div>
 			</div>
 		</button>
