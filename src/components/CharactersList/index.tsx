@@ -16,7 +16,9 @@ function CharactersList() {
 				// TODO: create No Results Card
 				<h2>No Results</h2>
 			) : (
-				data.map((character) => <CharacterCard character={character} />)
+				data.map((character) => (
+					<CharacterCard character={character} key={character.id} />
+				))
 			)}
 		</div>
 	);

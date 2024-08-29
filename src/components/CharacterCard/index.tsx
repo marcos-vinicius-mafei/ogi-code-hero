@@ -21,14 +21,14 @@ function CharacterCard({
 				</div>
 				<div className="card-column">
 					{series.items && series.items.length ? (
-						series.items.map((item) => <p>{item.name}</p>)
+						series.items.map((item) => <p key={item.name}>{item.name}</p>)
 					) : (
 						<p>No Series</p>
 					)}
 				</div>
 				<div className="card-column">
 					{events.items && events.items.length ? (
-						events.items.map((item) => <p>{item.name}</p>)
+						events.items.map((item) => <p key={item.name}>{item.name}</p>)
 					) : (
 						<p>No Events</p>
 					)}
