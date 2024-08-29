@@ -1,16 +1,15 @@
 import './styles.css';
-import Chevron from '../../assets/chevron.svg';
-import DoubleChevron from '../../assets/double-chevron.svg';
+import { Chevron, DoubleChevron } from '../Chevrons';
 
 function PageSelector() {
 	return (
 		<div className="page-selector-container">
 			<div className="backward-chevrons">
 				<button className="chevron-button backward-chevron">
-					<img src={DoubleChevron} />
+					<DoubleChevron />
 				</button>
 				<button className="chevron-button backward-chevron">
-					<img src={Chevron} />
+					<Chevron />
 				</button>
 			</div>
 			<div className="page-selector">
@@ -22,10 +21,10 @@ function PageSelector() {
 			</div>
 			<div className="foward-chevrons">
 				<button className="chevron-button foward-chevron">
-					<img src={Chevron} />
+					<Chevron />
 				</button>
 				<button className="chevron-button foward-chevron">
-					<img src={DoubleChevron} />
+					<DoubleChevron />
 				</button>
 			</div>
 		</div>

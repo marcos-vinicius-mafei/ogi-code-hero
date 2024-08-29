@@ -37,12 +37,16 @@ div.page-selector-container .chevron-button {
 	justify-content: center;
 }
 
-div.page-selector-container .chevron-button img {
-	height: 24px;
+div.page-selector-container .chevron-button svg path {
+	stroke: var(--smoke);
 }
 
-div.page-selector-container .chevron-button.backward-chevron img {
+div.page-selector-container .chevron-button.backward-chevron svg {
 	transform: rotate(180deg);
+}
+
+div.page-selector-container .chevron-button:hover svg path {
+	stroke: var(--blue);
 }
 
 div.page-selector .page-selector-button {
