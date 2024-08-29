@@ -11,6 +11,11 @@
 	--font-pt-comics: 'PT Sans Caption', system-ui;
 }
 
+#root {
+	position: relative;
+	min-height: 100vh;
+}
+
 body {
 	font-family: var(--font-pt-sans);
 	font-weight: 400;
@@ -26,6 +31,7 @@ body {
 
 main {
 	padding-top: 64px;
+	padding-bottom: 88px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -51,6 +57,7 @@ a {
 button {
 	border: none;
 	cursor: pointer;
+	background-color: transparent;
 }
 
 @media screen and (min-width: 768px) {

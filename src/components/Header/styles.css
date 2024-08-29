@@ -10,6 +10,7 @@ header {
 	font-size: 12px;
 	line-height: 16px;
 	position: fixed;
+	z-index: 5;
 }
 
 header img {
