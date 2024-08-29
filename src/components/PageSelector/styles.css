@@ -1,6 +1,48 @@
+div.page-selector-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
 div.page-selector {
 	display: flex;
 	gap: 8px;
+}
+
+div.page-selector-container .foward-chevrons {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 24px;
+	width: 48px;
+	position: absolute;
+	right: -58px;
+	top: 4px;
+}
+
+div.page-selector-container .backward-chevrons {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 24px;
+	width: 48px;
+	position: absolute;
+	left: -58px;
+	top: 4px;
+}
+
+div.page-selector-container .chevron-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.page-selector-container .chevron-button img {
+	height: 24px;
+}
+
+div.page-selector-container .chevron-button.backward-chevron img {
+	transform: rotate(180deg);
 }
 
 div.page-selector .page-selector-button {
