@@ -1,5 +1,5 @@
 import './styles.css';
-import searchIcon from '../../assets/search-icon.svg';
+import SearchIcon from '../../assets/search-icon.svg';
 
 function SearchInput() {
 	return (
@@ -10,7 +10,7 @@ function SearchInput() {
 				className="search-input"
 				onChange={(e) => console.log(e.target.value)}
 			/>
-			<img src={searchIcon} alt="Magnifying glass icon" />
+			<img src={SearchIcon} alt="Magnifying glass icon" />
 		</div>
 	);
 }
