@@ -30,10 +30,11 @@
 	line-height: 16px;
 	font-family: var(--font-pt-sans);
 	color: var(--dark-smoke);
-	max-width: 95%;
+	width: 95%;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	text-align: start;
 }
 
 .character-card .card-column.main p {
@@ -54,16 +55,27 @@
 		padding: 20px 24px;
 	}
 
-	.character-card .card-column {
+	.character-card .card-column:not(.main) {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		width: 33%;
 		align-items: flex-start;
+		max-height: 47px;
+		overflow: hidden;
+		flex-wrap: wrap;
+	}
+
+	.character-card .card-column.main {
+		width: 33%;
 	}
 }
 
 @media screen and (min-width: 768px) {
 	.character-card .card-column p {
 		font-size: 14px;
+	}
+
+	.character-card .card-column:not(.main) {
+		max-height: 48px;
 	}
 }
