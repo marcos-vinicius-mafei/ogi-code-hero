@@ -39,25 +39,19 @@ const Pagination: React.FC<PaginationProps> = ({
 	);
 
 	function handleDoubleFowardChevronClick() {
-		if (currentPage !== endPage) {
-			updateCurrentPage(endPage);
+		if (endPage + 10 > totalPages) {
+			updateCurrentPage(totalPages);
 		} else {
-			if (endPage + pagesToShow > totalPages) {
-				updateCurrentPage(totalPages);
-			} else {
-				updateCurrentPage((current) => current + pagesToShow);
-			}
+			updateCurrentPage((current) => current + 10);
 		}
 	}
 
 	function handleDoubleBackwardChevronClick() {
-		if (currentPage !== startPage) {
-			updateCurrentPage(startPage);
-		} else {
-			if (startPage - pagesToShow < 1) {
+		{
+			if (startPage - 10 < 1) {
 				updateCurrentPage(1);
 			} else {
-				updateCurrentPage((current) => current - pagesToShow);
+				updateCurrentPage((current) => current - 10);
 			}
 		}
 	}
