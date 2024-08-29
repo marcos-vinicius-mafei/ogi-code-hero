@@ -51,6 +51,11 @@ header img {
 	justify-content: center;
 }
 
+.candidate-abbr:hover {
+	background-color: var(--dark-smoke);
+	color: var(--white);
+}
+
 .candidate-abbr p {
 	font-size: 15px;
 	font-weight: bold;
