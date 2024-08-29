@@ -4,6 +4,7 @@
 	--dark-snow: #e5e5e5;
 	--smoke: #8e8e8e;
 	--dark-smoke: #555555;
+	--blue: #5dafff;
 	--dark-blue: #167abc;
 	--shadow: #00000033;
 
@@ -14,6 +15,8 @@
 #root {
 	position: relative;
 	min-height: 100vh;
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 body {

@@ -1,7 +1,12 @@
+import PageSelector from '../PageSelector';
 import './styles.css';
 
 function Footer() {
-	return <footer>Footer</footer>;
+	return (
+		<footer>
+			<PageSelector />
+		</footer>
+	);
 }
 
 export default Footer;

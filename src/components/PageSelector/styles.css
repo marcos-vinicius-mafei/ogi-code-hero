@@ -1,0 +1,30 @@
+div.page-selector {
+	display: flex;
+	gap: 8px;
+}
+
+div.page-selector .page-selector-button {
+	width: 32px;
+	height: 32px;
+	border-radius: 4px;
+	background-color: var(--snow);
+	border: 1px solid var(--dark-snow);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	font-family: var(--font-pt-sans);
+	color: var(--dark-smoke);
+}
+
+div.page-selector .page-selector-button:not(.active):hover {
+	background-color: var(--blue);
+	color: var(--white);
+	border: none;
+}
+
+div.page-selector .page-selector-button.active {
+	background-color: var(--dark-blue);
+	color: var(--white);
+	border: none;
+}
