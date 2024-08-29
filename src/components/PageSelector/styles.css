@@ -7,6 +7,10 @@ div.page-selector-container {
 div.page-selector {
 	display: flex;
 	gap: 8px;
+	max-width: 112px;
+	max-height: 32px;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
 
 div.page-selector-container .foward-chevrons {
@@ -78,6 +82,7 @@ div.page-selector .page-selector-button.active {
 @media screen and (min-width: 768px) {
 	div.page-selector {
 		gap: 16px;
+		max-width: 264px;
 	}
 
 	div.page-selector .page-selector-button {

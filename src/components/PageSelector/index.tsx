@@ -18,6 +18,8 @@ function PageSelector() {
 				</button>
 				<button className="page-selector-button">2</button>
 				<button className="page-selector-button">3</button>
+				<button className="page-selector-button">4</button>
+				<button className="page-selector-button">5</button>
 			</div>
 			<div className="foward-chevrons">
 				<button className="chevron-button foward-chevron">
