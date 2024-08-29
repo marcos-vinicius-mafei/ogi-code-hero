@@ -4,15 +4,6 @@ div.page-selector-container {
 	position: relative;
 }
 
-div.page-selector {
-	display: flex;
-	gap: 8px;
-	max-width: 112px;
-	max-height: 32px;
-	flex-wrap: wrap;
-	overflow: hidden;
-}
-
 div.page-selector-container .foward-chevrons {
 	display: flex;
 	align-items: center;
@@ -51,41 +42,4 @@ div.page-selector-container .chevron-button.backward-chevron svg {
 
 div.page-selector-container .chevron-button:hover svg path {
 	stroke: var(--blue);
-}
-
-div.page-selector .page-selector-button {
-	width: 32px;
-	height: 32px;
-	border-radius: 4px;
-	background-color: var(--snow);
-	border: 1px solid var(--dark-snow);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 14px;
-	font-family: var(--font-pt-sans);
-	color: var(--dark-smoke);
-}
-
-div.page-selector .page-selector-button:not(.active):hover {
-	background-color: var(--blue);
-	color: var(--white);
-	border: none;
-}
-
-div.page-selector .page-selector-button.active {
-	background-color: var(--dark-blue);
-	color: var(--white);
-	border: none;
-}
-
-@media screen and (min-width: 768px) {
-	div.page-selector {
-		gap: 16px;
-		max-width: 264px;
-	}
-
-	div.page-selector .page-selector-button {
-		width: 40px;
-	}
 }
