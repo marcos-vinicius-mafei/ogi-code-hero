@@ -38,13 +38,37 @@ const Pagination: React.FC<PaginationProps> = ({
 		(_, i) => startPage + i,
 	);
 
+	function handleDoubleFowardChevronClick() {
+		if (currentPage !== endPage) {
+			updateCurrentPage(endPage);
+		} else {
+			if (endPage + pagesToShow > totalPages) {
+				updateCurrentPage(totalPages);
+			} else {
+				updateCurrentPage((current) => current + pagesToShow);
+			}
+		}
+	}
+
+	function handleDoubleBackwardChevronClick() {
+		if (currentPage !== startPage) {
+			updateCurrentPage(startPage);
+		} else {
+			if (startPage - pagesToShow < 1) {
+				updateCurrentPage(1);
+			} else {
+				updateCurrentPage((current) => current - pagesToShow);
+			}
+		}
+	}
+
 	return (
 		<>
 			<div className="backward-chevrons">
-				{currentPage >= startPage + 2 && (
+				{startPage > 1 && (
 					<button
 						className="chevron-button backward-chevron"
-						onClick={() => updateCurrentPage(startPage)}
+						onClick={handleDoubleBackwardChevronClick}
 					>
 						<DoubleChevron />
 					</button>
@@ -78,10 +102,10 @@ const Pagination: React.FC<PaginationProps> = ({
 						<Chevron />
 					</button>
 				)}
-				{currentPage <= endPage - 2 && (
+				{endPage < totalPages && (
 					<button
 						className="chevron-button foward-chevron"
-						onClick={() => updateCurrentPage(endPage)}
+						onClick={handleDoubleFowardChevronClick}
 					>
 						<DoubleChevron />
 					</button>
