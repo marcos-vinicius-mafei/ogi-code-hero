@@ -13,7 +13,10 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 
 	useEffect(() => {
 		setIsLoading(true);
-		fetch('https://gateway.marvel.com/v1/public/characters')
+		const offset = (currentPage - 1) * 10;
+		fetch(
+			`https://gateway.marvel.com:443/v1/public/characters?limit=10&offset=${offset}&apikey=${import.meta.env.VITE_MARVEL_API_KEY}`,
+		)
 			.then((response) => response.json())
 			.then(({ data }: MarvelApiResponse) => {
 				setData(data.results || []);
@@ -28,7 +31,7 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 			.finally(() => {
 				setIsLoading(false);
 			});
-	}, []);
+	}, [currentPage]);
 
 	function openModal(character: MarvelCharacter) {
 		setCharacterDetails(character);
