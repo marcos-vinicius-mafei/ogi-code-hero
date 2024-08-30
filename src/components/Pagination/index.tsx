@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import { Chevron, DoubleChevron } from '../Chevrons';
+import { Chevron, DoubleChevron } from '../Icons';
 
 interface PaginationProps {
 	currentPage: number;
