@@ -91,7 +91,7 @@ div.modal-content {
 .modal-info > .comics-list {
 	display: flex;
 	gap: 16px;
-	align-items: center;
+	align-items: flex-end;
 	padding-inline: 16px;
 	padding-top: 8px;
 	padding-bottom: 16px;

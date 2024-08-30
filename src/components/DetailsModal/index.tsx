@@ -3,11 +3,16 @@ import { useCharacters } from '../../providers';
 import ComicCard from '../ComicCard';
 import { CloseIcon } from '../Icons';
 import './styles.css';
+import { buildMarvelAPIUrl } from '../../helpers';
+import { MarvelApiResponse, MarvelComic } from '../../../@types/general';
 
 function DetailsModal() {
 	const {
 		detailsModal: { characterDetails, closeModal, isModalVisible },
 	} = useCharacters();
+
+	const [isLoading, setIsLoading] = useState(true);
+	const [comics, setComics] = useState<MarvelComic[]>([]);
 
 	const [modalWrapperClass, setModalWrapperClass] = useState('hidden');
 	const [modalContainerClass, setModalContainerClass] = useState('hidden');
@@ -18,6 +23,20 @@ function DetailsModal() {
 			setModalContainerClass('modal-visible');
 		}
 	}, [isModalVisible]);
+
+	useEffect(() => {
+		if (characterDetails?.id === undefined) return;
+		setComics([]);
+		setIsLoading(true);
+		fetch(buildMarvelAPIUrl(`characters/${characterDetails.id}/comics`))
+			.then((response) => response.json())
+			.then(({ data }: MarvelApiResponse<MarvelComic>) => {
+				setComics(data.results || []);
+			})
+			.finally(() => {
+				setIsLoading(false);
+			});
+	}, [characterDetails?.id]);
 
 	function onClose() {
 		closeModal();
@@ -55,12 +74,19 @@ function DetailsModal() {
 					)}
 					<div className="modal-info">
 						<h3>Participações</h3>
-						<div className="comics-list">
-							<ComicCard />
-							<ComicCard />
-							<ComicCard />
-							<ComicCard />
-						</div>
+						{!isLoading && !comics.length ? (
+							<h3>Esse personagem não tem participações nos quadrinhos</h3>
+						) : (
+							<div className="comics-list">
+								{isLoading ? (
+									<h3>Loading</h3>
+								) : (
+									comics.map((comic) => (
+										<ComicCard comic={comic} key={comic.id} />
+									))
+								)}
+							</div>
+						)}
 					</div>
 				</div>
 			</div>

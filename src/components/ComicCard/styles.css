@@ -3,6 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 8px;
+	max-width: 150px;
 }
 
 .comic-card > h4 {

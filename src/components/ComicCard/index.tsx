@@ -1,12 +1,17 @@
+import { MarvelComic } from '../../../@types/general';
 import './styles.css';
 
-function ComicCard() {
+interface ComicCardProps {
+	comic: MarvelComic;
+}
+
+function ComicCard({ comic: { title, thumbnail } }: ComicCardProps) {
 	return (
 		<div className="comic-card">
-			<h4>Ultimate Spider Man</h4>
+			<h4>{title}</h4>
 			<img
-				src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
-				alt="comic image"
+				src={`${thumbnail.path}.${thumbnail.extension}`}
+				alt={`${title} comic cover`}
 			/>
 		</div>
 	);
