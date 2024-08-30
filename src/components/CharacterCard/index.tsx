@@ -16,8 +16,7 @@ function CharacterCard({
 				<div className="card-column main">
 					<img
 						src={`${thumbnail.path}.${thumbnail.extension}`}
-						// TODO use actual character name from props
-						alt="name of the character image"
+						alt={`${name}'s image`}
 					/>
 					<p>{name}</p>
 				</div>
