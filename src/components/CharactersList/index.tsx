@@ -5,6 +5,7 @@ import './styles.css';
 function CharactersList() {
 	const {
 		charactersList: { data, isLoading },
+		detailsModal: { openModal },
 	} = useCharacters();
 
 	return (
@@ -14,7 +15,11 @@ function CharactersList() {
 				<h2>Loading</h2>
 			) : (
 				data.map((character) => (
-					<CharacterCard character={character} key={character.id} />
+					<CharacterCard
+						character={character}
+						key={character.id}
+						onClick={() => openModal(character)}
+					/>
 				))
 			)}
 		</div>

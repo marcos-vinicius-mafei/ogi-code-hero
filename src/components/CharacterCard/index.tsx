@@ -3,13 +3,15 @@ import './styles.css';
 
 interface CharacterCardProps {
 	character: MarvelCharacter;
+	onClick: () => void;
 }
 
 function CharacterCard({
 	character: { name, series, events, thumbnail },
+	onClick,
 }: CharacterCardProps) {
 	return (
-		<button onClick={() => console.log('open details modal')}>
+		<button onClick={onClick}>
 			<div className="character-card">
 				<div className="card-column main">
 					<img
