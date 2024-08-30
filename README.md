@@ -64,13 +64,13 @@ Para gerar uma build otimizada para produção, execute:
 npm run build
 ```
 
-Para servir a build localmente, você pode usar:
+Para servir um preview da build, localmente, você pode usar:
 
 ```bash
-npm run serve
+npm run preview
 ```
 
-A aplicação estará acessível em [http://localhost:5000](http://localhost:5000).
+A aplicação estará acessível em [http://localhost:4173](http://localhost:4173).
 
 ---
 
