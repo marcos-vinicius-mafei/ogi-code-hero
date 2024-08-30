@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { useCharacters } from '../../providers';
 import ComicCard from '../ComicCard';
 import { CloseIcon } from '../Icons';
@@ -8,15 +9,27 @@ function DetailsModal() {
 		detailsModal: { characterDetails, closeModal, isModalVisible },
 	} = useCharacters();
 
+	const [modalWrapperClass, setModalWrapperClass] = useState('hidden');
+	const [modalContainerClass, setModalContainerClass] = useState('hidden');
+
+	useEffect(() => {
+		if (isModalVisible) {
+			setModalWrapperClass('wrapper-visible');
+			setModalContainerClass('modal-visible');
+		}
+	}, [isModalVisible]);
+
+	function onClose() {
+		closeModal();
+		setModalWrapperClass('wrapper-hidden');
+		setModalContainerClass('modal-hidden');
+	}
+
 	return (
-		<div
-			className={`modal-wrapper ${isModalVisible ? 'wrapper-visible' : 'wrapper-hidden'}`}
-		>
-			<div
-				className={`modal-container ${isModalVisible ? 'modal-visible' : 'modal-hidden'}`}
-			>
+		<div className={`modal-wrapper ${modalWrapperClass}`}>
+			<div className={`modal-container ${modalContainerClass}`}>
 				<div className="close-container">
-					<button onClick={closeModal}>
+					<button onClick={onClose}>
 						<CloseIcon />
 					</button>
 				</div>

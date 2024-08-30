@@ -156,3 +156,7 @@ div.modal-content {
 .modal-hidden {
 	animation: slideOut 0.3s ease-out forwards;
 }
+
+.hidden {
+	visibility: hidden;
+}
