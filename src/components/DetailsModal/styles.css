@@ -63,6 +63,7 @@ div.modal-content {
 
 .modal-info > img {
 	width: 50%;
+	aspect-ratio: 1;
 	max-width: 150px;
 	border-radius: 4px;
 }
