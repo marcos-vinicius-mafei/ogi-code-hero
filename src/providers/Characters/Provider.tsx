@@ -2,11 +2,11 @@ import { PropsWithChildren, useEffect, useState } from 'react';
 import { MarvelApiResponse, MarvelCharacter } from '../../../@types/general';
 import { CharactersContext } from './Context';
 
-function buildMarvelAPIUrl(offset: number, searchParam: string): string {
+function buildMarvelAPIUrl(page: number, searchParam: string): string {
 	const url = new URL('https://gateway.marvel.com:443/v1/public/characters');
 	const params = new URLSearchParams({
 		limit: '10',
-		offset: String(offset),
+		offset: String((page - 1) * 10),
 		apikey: import.meta.env.VITE_MARVEL_API_KEY,
 	});
 
@@ -31,8 +31,7 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 
 	useEffect(() => {
 		setIsLoading(true);
-		const offset = (currentPage - 1) * 10;
-		fetch(buildMarvelAPIUrl(offset, searchParam))
+		fetch(buildMarvelAPIUrl(currentPage, searchParam))
 			.then((response) => response.json())
 			.then(({ data }: MarvelApiResponse) => {
 				setData(data.results || []);
