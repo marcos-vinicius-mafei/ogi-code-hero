@@ -12,7 +12,9 @@ function CharactersList() {
 	return (
 		<div className="characters-list">
 			{isLoading
-				? Array.from({ length: 10 }).map((_, index) => <Skeleton key={index} />)
+				? Array.from({ length: 10 }).map((_, index) => (
+						<Skeleton key={index} animationDelay={index * 150} />
+					))
 				: data.map((character) => (
 						<CharacterCard
 							character={character}
