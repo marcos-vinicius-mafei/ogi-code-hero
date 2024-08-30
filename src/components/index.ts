@@ -3,3 +3,4 @@ export { default as SearchSection } from './SearchSection';
 export { default as CharactersSection } from './CharactersSection';
 export { default as Footer } from './Footer';
 export { default as DetailsModal } from './DetailsModal';
+export { default as Skeleton } from './Skeleton';
