@@ -97,7 +97,19 @@ div.modal-content {
 	padding-bottom: 16px;
 	width: 100%;
 	overflow-x: scroll;
-	scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--smoke);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
 }
 
 @keyframes slideIn {
