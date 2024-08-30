@@ -3,3 +3,14 @@ div.characters-list {
 	flex-direction: column;
 	gap: 8px;
 }
+
+.skeleton {
+	height: 72px;
+	width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+	.skeleton {
+		height: 88px;
+	}
+}
