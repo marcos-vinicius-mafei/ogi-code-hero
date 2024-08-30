@@ -1,0 +1,36 @@
+.comic-skeleton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 150px;
+	gap: 16px;
+}
+
+.comic-skeleton > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+
+.comic-title-skeleton {
+	width: 100px;
+	height: 12px;
+	border-radius: 2px;
+}
+
+.comic-title-skeleton:last-child {
+	width: 150px;
+}
+
+.comic-cover-skeleton {
+	width: 150px;
+	height: 170px;
+	border-radius: 0px;
+}
+
+@media screen and (min-width: 768px) {
+	.comic-title-skeleton {
+		height: 14px;
+	}
+}

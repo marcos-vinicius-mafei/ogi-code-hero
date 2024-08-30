@@ -6,6 +6,7 @@ import './styles.css';
 import { buildMarvelAPIUrl } from '../../helpers';
 import { MarvelApiResponse, MarvelComic } from '../../../@types/general';
 import { useBlockScroll, useOutsideClick } from '../../hooks';
+import ComicCardSkeleton from '../ComicCardSkeleton';
 
 function DetailsModal() {
 	const {
@@ -85,13 +86,13 @@ function DetailsModal() {
 							<h3>Esse personagem não tem participações nos quadrinhos</h3>
 						) : (
 							<div className="comics-list">
-								{isLoading ? (
-									<h3>Loading</h3>
-								) : (
-									comics.map((comic) => (
-										<ComicCard comic={comic} key={comic.id} />
-									))
-								)}
+								{isLoading
+									? Array.from({ length: 10 }).map((_, index) => (
+											<ComicCardSkeleton key={index} />
+										))
+									: comics.map((comic) => (
+											<ComicCard comic={comic} key={comic.id} />
+										))}
 							</div>
 						)}
 					</div>
