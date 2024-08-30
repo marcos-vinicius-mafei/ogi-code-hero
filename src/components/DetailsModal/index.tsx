@@ -1,21 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCharacters } from '../../providers';
 import ComicCard from '../ComicCard';
 import { CloseIcon } from '../Icons';
 import './styles.css';
 import { buildMarvelAPIUrl } from '../../helpers';
 import { MarvelApiResponse, MarvelComic } from '../../../@types/general';
+import { useOutsideClick } from '../../hooks';
 
 function DetailsModal() {
 	const {
 		detailsModal: { characterDetails, closeModal, isModalVisible },
 	} = useCharacters();
 
+	const modalRef = useRef(null);
+
 	const [isLoading, setIsLoading] = useState(true);
 	const [comics, setComics] = useState<MarvelComic[]>([]);
 
 	const [modalWrapperClass, setModalWrapperClass] = useState('hidden');
 	const [modalContainerClass, setModalContainerClass] = useState('hidden');
+
+	useOutsideClick(modalRef, () => onClose());
 
 	useEffect(() => {
 		if (isModalVisible) {
@@ -52,7 +57,7 @@ function DetailsModal() {
 
 	return (
 		<div className={`modal-wrapper ${modalWrapperClass}`}>
-			<div className={`modal-container ${modalContainerClass}`}>
+			<div className={`modal-container ${modalContainerClass}`} ref={modalRef}>
 				<div className="close-container">
 					<button onClick={onClose}>
 						<CloseIcon />
