@@ -5,6 +5,7 @@ interface CharactersContextType {
 	charactersList: {
 		isLoading: boolean;
 		data: MarvelCharacter[];
+		updateSearchParam: (search: string) => void;
 		pagination: {
 			currentPage: number;
 			totalPages: number;
