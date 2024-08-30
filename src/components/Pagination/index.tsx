@@ -39,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({
 	);
 
 	function handleDoubleFowardChevronClick() {
-		if (endPage + 10 > totalPages) {
+		if (currentPage + 10 > totalPages) {
 			updateCurrentPage(totalPages);
 		} else {
 			updateCurrentPage((current) => current + 10);
@@ -48,7 +48,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
 	function handleDoubleBackwardChevronClick() {
 		{
-			if (startPage - 10 < 1) {
+			if (currentPage - 10 < 1) {
 				updateCurrentPage(1);
 			} else {
 				updateCurrentPage((current) => current - 10);
