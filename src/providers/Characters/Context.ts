@@ -13,7 +13,7 @@ interface CharactersContextType {
 		};
 	};
 	detailsModal: {
-		characterDetails: MarvelCharacter | null;
+		characterDetails?: MarvelCharacter;
 		isModalVisible: boolean;
 		openModal: (character: MarvelCharacter) => void;
 		closeModal: () => void;

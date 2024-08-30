@@ -1,26 +1,7 @@
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { MarvelApiResponse, MarvelCharacter } from '../../../@types/general';
 import { CharactersContext } from './Context';
-
-function buildMarvelAPIUrl(page: number, searchParam: string): string {
-	const url = new URL('https://gateway.marvel.com:443/v1/public/characters');
-	const params = new URLSearchParams({
-		limit: '10',
-		offset: String((page - 1) * 10),
-		apikey: import.meta.env.VITE_MARVEL_API_KEY,
-	});
-
-	if (searchParam !== '') {
-		params.append(
-			'nameStartsWith',
-			searchParam.length >= 3 ? `%${searchParam}%` : searchParam,
-		);
-	}
-
-	url.search = params.toString();
-
-	return url.toString();
-}
+import { buildMarvelAPIUrl } from '../../helpers';
 
 export function CharactersProvider({ children }: PropsWithChildren) {
 	const [data, setData] = useState<MarvelCharacter[]>([]);
@@ -28,13 +9,14 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(1);
 	const [searchParam, setSearchParam] = useState('');
-	const [characterDetails, setCharacterDetails] =
-		useState<MarvelCharacter | null>(null);
+	const [characterDetails, setCharacterDetails] = useState<
+		MarvelCharacter | undefined
+	>(undefined);
 	const [isModalVisible, setIsModalVisible] = useState(false);
 
 	useEffect(() => {
 		setIsLoading(true);
-		fetch(buildMarvelAPIUrl(currentPage, searchParam))
+		fetch(buildMarvelAPIUrl('characters', currentPage, searchParam))
 			.then((response) => response.json())
 			.then(({ data }: MarvelApiResponse) => {
 				setData(data.results || []);
@@ -57,7 +39,6 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 	}
 
 	function closeModal() {
-		setCharacterDetails(null);
 		setIsModalVisible(false);
 	}
 
