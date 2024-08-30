@@ -5,7 +5,7 @@ import { CloseIcon } from '../Icons';
 import './styles.css';
 import { buildMarvelAPIUrl } from '../../helpers';
 import { MarvelApiResponse, MarvelComic } from '../../../@types/general';
-import { useOutsideClick } from '../../hooks';
+import { useBlockScroll, useOutsideClick } from '../../hooks';
 
 function DetailsModal() {
 	const {
@@ -21,6 +21,8 @@ function DetailsModal() {
 	const [modalContainerClass, setModalContainerClass] = useState('hidden');
 
 	useOutsideClick(modalRef, () => onClose());
+
+	useBlockScroll(isModalVisible);
 
 	useEffect(() => {
 		if (isModalVisible) {
