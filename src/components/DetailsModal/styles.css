@@ -1,0 +1,83 @@
+div.modal-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	pointer-events: all;
+}
+
+div.modal-container {
+	width: 90%;
+	max-width: 800px;
+	background-color: var(--white);
+	border-radius: 5px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+	height: 85%;
+	z-index: 1000;
+	pointer-events: all;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	overflow: scroll;
+}
+
+div.modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	gap: 24px;
+}
+
+.modal-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+	width: 100%;
+}
+
+.modal-info.main {
+	align-items: center;
+}
+
+.modal-info > img {
+	width: 50%;
+	max-width: 150px;
+	border-radius: 4px;
+}
+
+.modal-info > h2 {
+	font-family: var(--font-pt-comics);
+	margin-inline: 16px;
+	text-align: center;
+}
+
+.modal-info > h3 {
+	font-size: 14px;
+}
+
+.modal-info > p {
+	font-size: 12px;
+}
+
+.modal-info > h3,
+.modal-info > p {
+	margin-inline: 16px;
+}
+
+.modal-info > .comics-list {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	padding-inline: 16px;
+	padding-top: 8px;
+	padding-bottom: 16px;
+	width: 100%;
+	overflow-x: scroll;
+}
