@@ -17,7 +17,7 @@ div.modal-container {
 	background-color: var(--white);
 	border-radius: 5px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-	height: 85%;
+	max-height: 85%;
 	z-index: 1000;
 	pointer-events: all;
 	padding-top: 16px;
@@ -162,4 +162,18 @@ div.modal-content {
 
 .hidden {
 	visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	.modal-info > h2 {
+		font-size: 20px;
+	}
+
+	.modal-info > h3 {
+		font-size: 16px;
+	}
+
+	.modal-info > p {
+		font-size: 14px;
+	}
 }

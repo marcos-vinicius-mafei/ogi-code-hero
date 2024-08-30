@@ -16,3 +16,9 @@
 	width: 150px;
 	height: 170px;
 }
+
+@media screen and (min-width: 768px) {
+	.comic-card > h4 {
+		font-size: 14px;
+	}
+}
