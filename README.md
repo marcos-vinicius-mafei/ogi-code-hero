@@ -14,6 +14,12 @@
 - Listar personagens de acordo com a pesquisa.
 - Visualizar detalhes de personagens específicos.
 
+## Demonstração
+
+Você pode visualizar o projeto em produção através do link abaixo:
+
+[Ver Projeto](https://ogi-code-hero.vercel.app/)
+
 ## Instalação
 
 Siga os passos abaixo para rodar o projeto localmente:
