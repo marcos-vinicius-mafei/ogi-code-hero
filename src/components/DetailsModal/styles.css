@@ -23,6 +23,7 @@ div.modal-container {
 	padding-top: 16px;
 	padding-bottom: 16px;
 	overflow: scroll;
+	scrollbar-width: none;
 	position: relative;
 }
 
@@ -96,6 +97,7 @@ div.modal-content {
 	padding-bottom: 16px;
 	width: 100%;
 	overflow-x: scroll;
+	scrollbar-width: none;
 }
 
 @keyframes slideIn {
