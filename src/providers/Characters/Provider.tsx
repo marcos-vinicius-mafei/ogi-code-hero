@@ -40,8 +40,8 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 					setCurrentPage(1);
 					setTotalPages(1);
 				} else {
-					const totalPages = data.total / data.limit;
-					setTotalPages(Math.ceil(totalPages));
+					const newTotalPages = Math.ceil(data.total / data.limit);
+					setTotalPages(newTotalPages);
 				}
 			})
 			.finally(() => {
