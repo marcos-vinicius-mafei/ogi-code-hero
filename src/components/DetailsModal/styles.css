@@ -9,7 +9,6 @@ div.modal-wrapper {
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 1000;
-	pointer-events: all;
 }
 
 div.modal-container {
@@ -24,6 +23,22 @@ div.modal-container {
 	padding-top: 16px;
 	padding-bottom: 16px;
 	overflow: scroll;
+	position: relative;
+}
+
+div.modal-container .close-container {
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	z-index: 1000;
+}
+
+div.modal-container .close-container svg path {
+	stroke: var(--dark-smoke);
+}
+
+div.modal-container .close-container button:hover path {
+	stroke: var(--blue);
 }
 
 div.modal-content {
@@ -80,4 +95,64 @@ div.modal-content {
 	padding-bottom: 16px;
 	width: 100%;
 	overflow-x: scroll;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes slideOut {
+	from {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.wrapper-visible {
+	animation: fadeIn 0.3s ease-out forwards;
+}
+
+.wrapper-hidden {
+	animation: fadeOut 0.3s ease-out forwards;
+}
+
+.modal-visible {
+	animation: slideIn 0.3s ease-out forwards;
+}
+
+.modal-hidden {
+	animation: slideOut 0.3s ease-out forwards;
 }

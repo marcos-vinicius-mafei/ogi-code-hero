@@ -1,10 +1,25 @@
+import { useCharacters } from '../../providers';
 import ComicCard from '../ComicCard';
+import { CloseIcon } from '../Icons';
 import './styles.css';
 
 function DetailsModal() {
+	const {
+		detailsModal: { characterDetails, closeModal, isModalVisible },
+	} = useCharacters();
+
 	return (
-		<div className="modal-wrapper">
-			<div className="modal-container">
+		<div
+			className={`modal-wrapper ${isModalVisible ? 'wrapper-visible' : 'wrapper-hidden'}`}
+		>
+			<div
+				className={`modal-container ${isModalVisible ? 'modal-visible' : 'modal-hidden'}`}
+			>
+				<div className="close-container">
+					<button onClick={closeModal}>
+						<CloseIcon />
+					</button>
+				</div>
 				<div className="modal-content">
 					<div className="modal-info main">
 						<img

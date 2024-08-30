@@ -30,7 +30,7 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 	const [searchParam, setSearchParam] = useState('');
 	const [characterDetails, setCharacterDetails] =
 		useState<MarvelCharacter | null>(null);
-	const [isModalVisible, setIsModalVisible] = useState(true);
+	const [isModalVisible, setIsModalVisible] = useState(false);
 
 	useEffect(() => {
 		setIsLoading(true);

@@ -1,4 +1,10 @@
-import { CharactersSection, Footer, Header, SearchSection } from './components';
+import {
+	CharactersSection,
+	DetailsModal,
+	Footer,
+	Header,
+	SearchSection,
+} from './components';
 import { CharactersProvider } from './providers';
 
 function App() {
@@ -6,6 +12,7 @@ function App() {
 		<>
 			<Header />
 			<CharactersProvider>
+				<DetailsModal />
 				<main>
 					<div className="inner-container">
 						<SearchSection />
