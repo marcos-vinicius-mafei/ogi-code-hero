@@ -7,6 +7,7 @@ import { buildMarvelAPIUrl } from '../../helpers';
 import { MarvelApiResponse, MarvelComic } from '../../../@types/general';
 import { useBlockScroll, useOutsideClick } from '../../hooks';
 import ComicCardSkeleton from '../ComicCardSkeleton';
+import NoComicsResults from '../NoComicsResults';
 
 function DetailsModal() {
 	const {
@@ -83,7 +84,7 @@ function DetailsModal() {
 					<div className="modal-info">
 						<h3>Participações</h3>
 						{!isLoading && !comics.length ? (
-							<h3>Esse personagem não tem participações nos quadrinhos</h3>
+							<NoComicsResults />
 						) : (
 							<div className="comics-list">
 								{isLoading

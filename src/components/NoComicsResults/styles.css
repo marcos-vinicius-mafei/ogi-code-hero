@@ -1,0 +1,44 @@
+.no-comics-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 8px;
+}
+
+.no-comics-results {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	max-width: 400px;
+	padding-inline: 8px;
+}
+
+.no-comics-results > img {
+	width: 250px;
+	aspect-ratio: 1.37;
+	border-radius: 4px;
+}
+
+.no-comics-results > h3 {
+	text-align: center;
+}
+
+.no-comics-results > p {
+	font-size: 14px;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.no-comics-results > img {
+		width: 300px;
+	}
+
+	.no-comics-results > h3 {
+		font-size: 18px;
+	}
+
+	.no-comics-results > p {
+		font-size: 16px;
+	}
+}
