@@ -1,19 +1,19 @@
-export interface MarvelApiResponse {
+export interface MarvelApiResponse<T extends MarvelCharacter | MarvelComic> {
 	code: number;
 	status: string;
 	copyright: string;
 	attributionText: string;
 	attributionHTML: string;
 	etag: string;
-	data: ResponseData;
+	data: ResponseData<T>;
 }
 
-export interface ResponseData {
+export interface ResponseData<T extends MarvelCharacter | MarvelComic> {
 	offset: number;
 	limit: number;
 	total: number;
 	count: number;
-	results?: MarvelCharacter[];
+	results?: T[];
 }
 
 export interface MarvelCharacter {
@@ -87,4 +87,40 @@ export interface EventSummary {
 export interface UrlType {
 	type: string;
 	url: string;
+}
+
+export interface MarvelComic {
+	id: number;
+	digitalId: number;
+	title: string;
+	issueNumber: number;
+	variantDescription: string;
+	description: string;
+	modified: string;
+	isbn: string;
+	upc: string;
+	diamondCode: string;
+	ean: string;
+	issn: string;
+	format: string;
+	pageCount: number;
+	textObjects: TextObject[];
+	resourceURI: string;
+	urls: UrlType[];
+	series: SeriesSummary;
+	variants: ComicSummary[];
+	collections: ComicSummary[];
+	collectedIssues: ComicSummary[];
+
+	thumbnail: Image;
+	images: Image[];
+
+	stories: StoryList;
+	events: EventList;
+}
+
+export interface TextObject {
+	type: string;
+	language: string;
+	text: string;
 }

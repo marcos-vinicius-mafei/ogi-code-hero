@@ -18,7 +18,7 @@ export function CharactersProvider({ children }: PropsWithChildren) {
 		setIsLoading(true);
 		fetch(buildMarvelAPIUrl('characters', currentPage, searchParam))
 			.then((response) => response.json())
-			.then(({ data }: MarvelApiResponse) => {
+			.then(({ data }: MarvelApiResponse<MarvelCharacter>) => {
 				setData(data.results || []);
 				if (!data.total || !data.limit) {
 					setCurrentPage(1);
