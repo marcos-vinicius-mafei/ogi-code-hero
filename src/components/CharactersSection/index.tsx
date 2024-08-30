@@ -1,6 +1,7 @@
 import './styles.css';
 import CharactersList from '../CharactersList';
 import { useCharacters } from '../../providers';
+import NoCharactersResults from '../NoCharactersResults';
 
 function CharactersSection() {
 	const {
@@ -10,8 +11,7 @@ function CharactersSection() {
 	return (
 		<section className="characters-section">
 			{!data.length && !isLoading ? (
-				// TODO: create No Results Card
-				<h2>No Results</h2>
+				<NoCharactersResults />
 			) : (
 				<>
 					<div className="labels-container">
