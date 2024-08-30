@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCharacters } from '../../providers';
 import ComicCard from '../ComicCard';
 import { CloseIcon } from '../Icons';
@@ -25,6 +25,12 @@ function DetailsModal() {
 		setModalContainerClass('modal-hidden');
 	}
 
+	if (!characterDetails) {
+		return null;
+	}
+
+	const { name, thumbnail, description } = characterDetails;
+
 	return (
 		<div className={`modal-wrapper ${modalWrapperClass}`}>
 			<div className={`modal-container ${modalContainerClass}`}>
@@ -36,19 +42,17 @@ function DetailsModal() {
 				<div className="modal-content">
 					<div className="modal-info main">
 						<img
-							src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
-							alt="character name"
+							src={`${thumbnail.path}.${thumbnail.extension}`}
+							alt={`${name}'s image`}
 						/>
-						<h2>3D Man</h2>
+						<h2>{name}</h2>
 					</div>
-					<div className="modal-info">
-						<h3>Descrição</h3>
-						<p>
-							The Green Goblin is on a Spider-DNA-stealing rampage through
-							multiple dimensions…this time running afoul of the Medieval Age’s
-							Spyder-Knight!
-						</p>
-					</div>
+					{description && (
+						<div className="modal-info">
+							<h3>Descrição</h3>
+							<p>{description}</p>
+						</div>
+					)}
 					<div className="modal-info">
 						<h3>Participações</h3>
 						<div className="comics-list">
