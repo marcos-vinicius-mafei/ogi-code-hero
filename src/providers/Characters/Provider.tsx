@@ -11,7 +11,10 @@ function buildMarvelAPIUrl(page: number, searchParam: string): string {
 	});
 
 	if (searchParam !== '') {
-		params.append('nameStartsWith', searchParam);
+		params.append(
+			'nameStartsWith',
+			searchParam.length >= 3 ? `%${searchParam}%` : searchParam,
+		);
 	}
 
 	url.search = params.toString();
